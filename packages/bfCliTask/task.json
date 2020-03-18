@@ -1,0 +1,61 @@
+{
+    "id": "dc28e910-44e2-4c2a-9c2a-1eb72b891d68",
+    "name": "bf-cli-task",
+    "friendlyName": "BotFramework Task",
+    "description": "Wraps the BF CLI tooling",
+    "helpMarkDown": "",
+    "category": "Deploy",
+    "author": "Microsoft Corporation",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "version": {
+        "Major": 4,
+        "Minor": 8,
+        "Patch": 0,
+        "Release":0
+    },
+    "instanceNameFormat": "BotFramework Task",
+    "groups": [
+        {
+            "name": "azure",
+            "displayName": "Azure Details",
+            "isExpanded": true
+        },
+        {
+            "name": "commands",
+            "displayName": "Commands",
+            "isExpanded": true
+        }
+    ],
+    "inputs": [
+        {
+            "name": "azureSubscription",
+            "type": "connectedService:AzureRM",
+            "label": "Azure Subscription",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
+            "groupname": "azure"
+        },
+        {
+            "name": "bf-command",
+            "type": "pickList",
+            "label": "Command",
+            "required": true,
+            "defaultValue": "LUIS",
+            "groupname": "commands",
+            "helpMarkDown": "Select the command to execute.",
+            "options": {
+                "LUIS" : "LUIS",
+                "QnaMaker" : "QnaMaker"
+            }       
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
