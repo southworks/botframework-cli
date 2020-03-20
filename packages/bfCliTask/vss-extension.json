@@ -2,7 +2,7 @@
     "manifestVersion": 1,
      "id": "bf-cli-task",
      "name": "BotFramework Task",
-     "version": "4.8.0.0",
+     "version": "4.8.0.14",
      "publisher": "Southworks-Pipelines-Test",
      "targets": [
          {
@@ -23,18 +23,18 @@
      },
     "files": [
          {
-             "path": ""
+             "path": "src"
          }
      ],
     "contributions": [
          {
-             "id": "custom-bot-deployment-task",
+             "id": "custom-bf-cli-task",
              "type": "ms.vss-distributed-task.task",
              "targets": [
                  "ms.vss-distributed-task.tasks"
              ],
              "properties": {
-                 "name": "bf-cli-task"
+                 "name": "src"
              }
      }
      ],

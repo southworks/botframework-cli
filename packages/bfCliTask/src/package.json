@@ -6,8 +6,7 @@
   "scripts": {
     "build": "tsc -b",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "posttest": "",
-    "postinstall": "cd src && npm install"
+    "posttest": ""
   },
   "repository": {
     "type": "git",
@@ -18,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/microsoft/botframework-cli/issues"
   },
-  "homepage": "https://github.com/microsoft/botframework-cli#readme"
+  "homepage": "https://github.com/microsoft/botframework-cli#readme",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.2",
+    "@types/q": "^1.5.2"
+  }
 }

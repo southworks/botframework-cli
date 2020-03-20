@@ -1,10 +1,10 @@
 {
-    "id": "dc28e910-44e2-4c2a-9c2a-1eb72b891d68",
+    "id": "ea18cfcb-9e65-46de-acfb-6398f379db71",
     "name": "bf-cli-task",
     "friendlyName": "BotFramework Task",
     "description": "Wraps the BF CLI tooling",
     "helpMarkDown": "",
-    "category": "Deploy",
+    "category": "Utility",
     "author": "Microsoft Corporation",
     "visibility": [
         "Build",
@@ -14,7 +14,7 @@
         "Major": 4,
         "Minor": 8,
         "Patch": 0,
-        "Release":0
+        "Release":14
     },
     "instanceNameFormat": "BotFramework Task",
     "groups": [
@@ -40,7 +40,7 @@
             "groupname": "azure"
         },
         {
-            "name": "bf-command",
+            "name": "bfCommand",
             "type": "pickList",
             "label": "Command",
             "required": true,
@@ -51,6 +51,14 @@
                 "LUIS" : "LUIS",
                 "QnaMaker" : "QnaMaker"
             }       
+        },
+        {
+            "name": "applicationName",
+            "type": "string",
+            "label": "Application Name",
+            "required": true,
+            "groupname": "commands",
+            "helpMarkDown": "Enter a name for the LUIS application."    
         }
     ],
     "execution": {
