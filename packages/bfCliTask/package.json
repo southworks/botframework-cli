@@ -4,10 +4,9 @@
   "description": "A task that wraps the BF CLI tooling",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -b",
+    "build": "cd src && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "posttest": "",
-    "postinstall": "cd src && npm install"
+    "posttest": ""
   },
   "repository": {
     "type": "git",
