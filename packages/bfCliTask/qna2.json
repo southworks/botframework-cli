@@ -1,0 +1,24 @@
+﻿{
+	"urls": [],
+	"qnaList": [
+		{
+			"id": 0,
+			"answer": "quien te conoce2",
+			"questions": [
+				"le parece bien el aumento del boleto?2"
+			],
+			"metadata": [],
+			"source": "atendedor"
+		},
+		{
+			"id": 0,
+			"answer": "hi there, hooman2",
+			"questions": [
+				"hi bot2"
+			],
+			"metadata": [],
+			"source": "custom"
+		}
+	],
+	"name": "qna-cli-test"
+}
