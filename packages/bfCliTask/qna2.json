@@ -3,18 +3,18 @@
 	"qnaList": [
 		{
 			"id": 0,
-			"answer": "quien te conoce2",
+			"answer": "quien te conoce",
 			"questions": [
-				"le parece bien el aumento del boleto?2"
+				"le parece bien el aumento del boleto?"
 			],
 			"metadata": [],
 			"source": "atendedor"
 		},
 		{
 			"id": 0,
-			"answer": "hi there, hooman2",
+			"answer": "hello friend",
 			"questions": [
-				"hi bot2"
+				"hi bot"
 			],
 			"metadata": [],
 			"source": "custom"
