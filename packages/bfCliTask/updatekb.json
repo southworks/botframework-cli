@@ -1,0 +1,15 @@
+{
+  "add": {
+    "qnaList": [
+      {
+        "id": 0,
+        "answer": "This message was added with an update DTO",
+        "source": "Pipeline",
+        "questions": [
+          "How can I update a knowledgebase"
+        ],
+        "metadata": []
+      }
+    ]
+  }
+}
