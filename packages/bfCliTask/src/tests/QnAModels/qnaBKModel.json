@@ -1,0 +1,42 @@
+{
+    "name": "QnA Maker FAQ",
+    "qnaList": [
+      {
+        "id": 1,
+        "answer": "You can change the default message if you use the QnAMakerDialog.",
+        "source": "Custom Editorial",
+        "questions": [
+          "How can I change the default message from QnA Maker?"
+        ],
+      "metadata": []
+      },
+      {
+        "id": 2,
+        "answer": "You can use our REST apis to manage your KB. See here for details:",
+        "source": "Custom Editorial",
+        "questions": [
+          "How do I programmatically update my KB?"
+        ],
+        "metadata": [
+          {
+            "name": "category",
+            "value": "api"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "answer": "You can find the information about QnA in the documentation, please follow the next link",
+        "source": "Custom Editorial",
+        "questions": [
+          "How can QnA info?"
+        ],
+        "metadata": [
+          {
+            "name": "category",
+            "value": "api"
+          }
+        ]
+      }
+    ]
+}

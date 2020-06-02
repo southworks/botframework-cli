@@ -13,7 +13,7 @@ export class Utils {
         const path = getInput(inputName) as string;
 
         if (!existsSync(path)) {
-            throw new Error(`The file or directory "${ path }" specified in "${ inputName }" does not exist.`);
+            throw new Error(`The file or directory "${ path }" specified in "${ inputName }" does not exist.`);            
         }
 
         return path;
