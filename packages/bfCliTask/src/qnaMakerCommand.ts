@@ -82,7 +82,7 @@ export class QnAMakerCommand {
                     this.updateKnowledgeBase();
                     break;
                 case 'TrainKB':
-                    this.traingKnowledgeBase();
+                    this.trainKnowledgeBase();
                     break;
                 case 'AlterationsReplaceKB':
                     this.replaceAlterations();
