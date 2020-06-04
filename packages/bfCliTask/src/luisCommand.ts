@@ -136,7 +136,7 @@ export class LuisCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);            
         } else {
             console.log(`LUIS Application successfully created \n${stdout}`);
@@ -149,7 +149,7 @@ export class LuisCommand {
         const command = `bf luis:build --in "${ this.luisInputFile }" --authoringKey "${ this.luisSubscriptionKey }" --botName "${ this.luisBotName }" `;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);            
         } else {
             console.log(`LUIS Application successfully built \n${stdout}`);
@@ -162,7 +162,7 @@ export class LuisCommand {
         const command = `bf luis:train:run --appId "${ this.luisAppId }" --versionId "${ this.luisVersionId }" --endpoint "${ this.luisEndpoint }" --subscriptionKey "${ this.luisSubscriptionKey }"`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);            
         } else {
             console.log(`LUIS Training request successfully issued \n${stdout}`);
@@ -176,7 +176,7 @@ export class LuisCommand {
         command += this.luisPublishStaging? ` --staging` : '';
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS Application successfully published \n${stdout}`);
@@ -189,7 +189,7 @@ export class LuisCommand {
         const command = `bf luis:application:delete --appId "${ this.luisAppId }" --endpoint "${ this.luisEndpoint }" --subscriptionKey "${ this.luisSubscriptionKey }" --force`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS Application successfully deleted \n${stdout}`);
@@ -206,7 +206,7 @@ export class LuisCommand {
         command += `--in "${ this.luisInputFile }" > ${ outputFileLuisImport }`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS Application successfully imported \n${stdout}`);
@@ -220,7 +220,7 @@ export class LuisCommand {
         command += `--name "${ this.luisApplicationName }" --description "${ this.luisAppDescription }"`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS Application successfully renamed \n${stdout}`);
@@ -234,7 +234,7 @@ export class LuisCommand {
         command += `--in "${ this.luisConvertInput }" --out "${ this.luisConvertOutput }" --culture "${ this.luisCulture }" --force --recurse`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log('LUIS model successfully wrote to:' + this.luisConvertOutput + `\n${stdout}` );
@@ -255,7 +255,7 @@ export class LuisCommand {
         const command = `bf luis:generate:${ language } --in "${ this.luisGenerateInput }" --out "${ this.luisGenerateOutput }" --className "${ this.className }" --force`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`The file: ' + this.luisGenerateOutput + ' containing the class: ' + this.className + ' was successfully generated. \n${stdout}`);
@@ -270,7 +270,7 @@ export class LuisCommand {
         command += ` --tgtlang "${ this.targetLang }" --force --recurse --translate_comments --translate_link_text`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS model successfully translated \n${stdout}`);
@@ -284,7 +284,7 @@ export class LuisCommand {
         command += `--endpoint "${ this.luisEndpoint }" --subscriptionKey "${ this.luisSubscriptionKey }"`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS version successfully cloned \n${stdout}`);
@@ -298,7 +298,7 @@ export class LuisCommand {
         command += `--endpoint "${ this.luisEndpoint }" --subscriptionKey "${ this.luisSubscriptionKey }" --force`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS version successfully exported \n${stdout}`);
@@ -312,7 +312,7 @@ export class LuisCommand {
         command += `--endpoint "${ this.luisEndpoint }" --subscriptionKey "${ this.luisSubscriptionKey }"`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS version successfully exported \n${stdout}`);
@@ -326,7 +326,7 @@ export class LuisCommand {
         command += `--versionId "${ this.luisVersionId }" --newVersionId "${ this.newVersionId }"`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS application renamed successfully \n${stdout}`);
@@ -340,7 +340,7 @@ export class LuisCommand {
         command += `--versionId "${ this.luisVersionId }"`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`LUIS application deleted successfully \n${stdout}`);

@@ -118,7 +118,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);            
         } else {
             console.log(`QnA knowledgebase succesfully published \n${stdout}`);
@@ -136,7 +136,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);            
         } else {
             console.log(`QnA knowledgebase successfully created \n${stdout}`);
@@ -155,7 +155,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`QnA knolewdgebase successfully deleted \n${stdout}`);
@@ -169,7 +169,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`QnA knowledgebase successfully replaced \n${stdout}`);
@@ -183,7 +183,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`QnA knowledgebase successfully updated \n${stdout}`);
@@ -197,7 +197,7 @@ export class QnAMakerCommand {
         
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`QnA knowledgebase successfully trained \n${stdout}`);
@@ -216,7 +216,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`Alterations successfully replaced \n${stdout}`);
@@ -232,7 +232,7 @@ export class QnAMakerCommand {
             let command = `bf qnamaker:query --endpointKey "${ this.kbEndPointKey }" --hostname "${ this.kbHostName }" --kbId "${ this.kbId }" --question "${ this.qnaQuestion }"`;            
             const { stdout, stderr } = await executeCommand(command);
 
-            if (stderr) {
+            if (stderr && !stderr.includes("Succeeded")) {
                 taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
             } else {
                 var queryResult = JSON.stringify(JSON.parse(stdout));            
@@ -270,7 +270,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
 
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`Endpoint settings successfully updated \n${stdout}`);
@@ -286,7 +286,7 @@ export class QnAMakerCommand {
         command += ` --keyType "${ this.keyType }" > "${ RefreshedKeys }" | cat  "${ RefreshedKeys }"`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`Endpoint keys successfully refreshed \n${stdout}`);
@@ -308,7 +308,7 @@ export class QnAMakerCommand {
 
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`QnA files converted successfully \n${stdout}`); 
@@ -323,7 +323,7 @@ export class QnAMakerCommand {
         command += ` --tgtlang "${ this.qnaTargetLang }" --force --recurse --translate_comments --translate_link_text`;
         const { stdout, stderr } = await executeCommand(command);
     
-        if (stderr) {
+        if (stderr && !stderr.includes("Succeeded")) {
             taskLibrary.setResult(taskLibrary.TaskResult.Failed, stderr, true);
         } else {
             console.log(`QnA models translated successfully\n${stdout}`);
