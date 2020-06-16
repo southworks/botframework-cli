@@ -40,7 +40,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/santgr11/BotManager",
+  "homepage": "https://github.com/microsoft/botframework-cli/tree/master/packages/BotManagerCli",
   "keywords": [
     "oclif"
   ],
@@ -53,7 +53,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "santgr11/BotManager",
+  "repository": "microsoft/botframework-cli",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
