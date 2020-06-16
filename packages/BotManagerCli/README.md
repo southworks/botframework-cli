@@ -28,19 +28,37 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`BM connect-and-deploy [FILE]`](#bm-connect-and-deploy-file)
+* [`BM connect-and-deploy`](#bm-connect-and-deploy)
+* [`BM create:bot-resources [FILE]`](#bm-createbot-resources-file)
+* [`BM create:qna-kb [FILE]`](#bm-createqna-kb-file)
+* [`BM create:qna-service [FILE]`](#bm-createqna-service-file)
+* [`BM deploy [FILE]`](#bm-deploy-file)
 * [`BM get-sample [OPTIONS]`](#bm-get-sample-options)
 * [`BM hello [FILE]`](#bm-hello-file)
 * [`BM help [COMMAND]`](#bm-help-command)
 * [`BM login`](#bm-login)
 
-## `BM connect-and-deploy [FILE]`
+## `BM connect-and-deploy`
+
+Create the resources and deploy the Bot to Azure.
+
+```
+USAGE
+  $ BM connect-and-deploy
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src\commands\connect-and-deploy.ts](https://github.com/santgr11/BotManager/blob/v0.0.0/src\commands\connect-and-deploy.ts)_
+
+## `BM create:bot-resources [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ BM connect-and-deploy [FILE]
+  $ BM create:bot-resources [FILE]
 
 OPTIONS
   -f, --force
@@ -48,11 +66,59 @@ OPTIONS
   -n, --name=name  name to print
 ```
 
-_See code: [src\commands\connect-and-deploy.ts](https://github.com/santgr11/BotManager/blob/v0.0.0/src\commands\connect-and-deploy.ts)_
+_See code: [src\commands\create\bot-resources.ts](https://github.com/santgr11/BotManager/blob/v0.0.0/src\commands\create\bot-resources.ts)_
+
+## `BM create:qna-kb [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ BM create:qna-kb [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src\commands\create\qna-kb.ts](https://github.com/santgr11/BotManager/blob/v0.0.0/src\commands\create\qna-kb.ts)_
+
+## `BM create:qna-service [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ BM create:qna-service [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src\commands\create\qna-service.ts](https://github.com/santgr11/BotManager/blob/v0.0.0/src\commands\create\qna-service.ts)_
+
+## `BM deploy [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ BM deploy [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src\commands\deploy.ts](https://github.com/santgr11/BotManager/blob/v0.0.0/src\commands\deploy.ts)_
 
 ## `BM get-sample [OPTIONS]`
 
-download a sample from BotBuilder-Samples repository
+Download a sample from BotBuilder-Samples repository.
 
 ```
 USAGE
@@ -67,7 +133,7 @@ _See code: [src\commands\get-sample.ts](https://github.com/santgr11/BotManager/b
 
 ## `BM hello [FILE]`
 
-describe the command here
+sample command from the tool
 
 ```
 USAGE
