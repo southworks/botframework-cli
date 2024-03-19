@@ -65,12 +65,12 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)/drop'
     flattenFolders: true
     
-- task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
-  displayName: 'generate software bill of materials'
-  inputs:
-    BuildDropPath: '$(Build.ArtifactStagingDirectory)/drop'
-    PackageName: 'Microsoft Bot Framework CLI'
-    PackageVersion: $(buildVersion)
+# - task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
+#   displayName: 'generate software bill of materials'
+#   inputs:
+#     BuildDropPath: '$(Build.ArtifactStagingDirectory)/drop'
+#     PackageName: 'Microsoft Bot Framework CLI'
+#     PackageVersion: $(buildVersion)
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
