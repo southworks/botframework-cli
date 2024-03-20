@@ -4,6 +4,11 @@
   "pnpmVersion": "4.14.4",
   "pnpmOptions": {},
   "nodeSupportedVersionRange": ">=14.0.0",
+  "eventHooks": {
+    "postRushInstall": [
+      "npx rimraf ./packages/orchestratorlib/node_modules/@microsoft/orchestrator-core/node_modules/@babel/traverse"
+    ]
+  },
   "projects": [
     {
       "packageName": "@microsoft/bf-cli-command",
