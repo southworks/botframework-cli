@@ -20,13 +20,6 @@ jobs:
       buildVersion: '4.10.0-preview.$(Build.BuildId)'
       _version: ${{coalesce(variables.version, variables.buildVersion)}}
 
-    steps:
-    - task: colinsalmcorner.colinsalmcorner-buildtasks.tag-build-task.tagBuildOrRelease@0
-      displayName: 'Tag Build with version number'
-      inputs:
-        tags: 'Version=$(_version)'
-      continueOnError: true
-
     - task: NodeTool@0
       displayName: 'Use Node 16.x'
       inputs:
@@ -60,12 +53,6 @@ jobs:
         else { $Url = "https://codecov.io/github/microsoft/botframework-cli/commit/$(Build.SourceVersion)" };
         Write-Host "##vso[task.setvariable variable=CodecovUrl;]$Url"
       displayName: 'Set CodecovUrl'
-
-    - task: colinsalmcorner.colinsalmcorner-buildtasks.tag-build-task.tagBuildOrRelease@0
-      displayName: 'Tag Build with coverage url'
-      inputs:
-        tags: '$(CodecovUrl)'
-      continueOnError: true
   
     - task: PublishCodeCoverageResults@1
       displayName: 'Populate Code Coverage tab'
@@ -120,9 +107,6 @@ jobs:
         #SourceFolder: # Optional
         Contents: './common/config/rush/pnpm-lock.yaml' 
         #RemoveSourceFolder: # Optional       
-
-    - task: ms.vss-governance-buildtask.governance-build-task-component-detection.ComponentGovernanceComponentDetection@0
-      displayName: 'Component Detection'
 
     - powershell: 'Get-ChildItem .. -ErrorAction Continue -Recurse -Force | Where {$_.FullName -notlike "*node_modules*"}'
       displayName: 'Dir workspace except node_modules'
